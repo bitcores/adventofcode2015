@@ -19,7 +19,8 @@ with open("input9.txt") as fp:
         allset.add(rou[1])
 
 alldest = list(permutations(allset))
-mindist = 0
+# for part b change to 0
+mindist = 99999
 minpath = ""
 
 for x in range(len(alldest)):
@@ -28,7 +29,8 @@ for x in range(len(alldest)):
     for y in range(len(alldest[x])-1):
         dist += loca[alldest[x][y]][alldest[x][y+1]]
         path = path + alldest[x][y] + " -> " + alldest[x][y+1] + ", " + str(dist) + ". "
-    if dist > mindist: 
+    #for part b change to >
+    if dist < mindist: 
         mindist = dist
         minpath = path
 
